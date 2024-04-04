@@ -7,9 +7,9 @@ const app = express();
 const apiKey = //Introducir key de https://home.openweathermap.org/ entre comillas
 
 //Middlewares
-app.use(express.static('public')); //Express wont allow access to this file by default, so we need to expose it with this line of code
+app.use(express.static('public')); //Permite que se publique en el navegador la carpeta con ficheros estáticos
 app.use(bodyParser.urlencoded({ extended: true }));
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 
 
 //Routes
@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
 })
 
 app.post('/', function (req, res) {
-  let city = req.body.city;
+  let city = req.body.city; //City es el nombre del input, así que se trae ese valor
   let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
 
   request(url, function (err, response, body) {
