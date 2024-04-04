@@ -1,0 +1,10 @@
+html 
+    style
+        include ../public/style.css
+head
+    titleDocument=title
+body
+    h1 Buscador de pelis
+    form(action="/film", method="post")
+        input(type='text' name='title')
+        input(type='submit' value='Search')

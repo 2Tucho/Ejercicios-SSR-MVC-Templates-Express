@@ -1,0 +1,18 @@
+html 
+    style
+        include ../public/style.css
+head
+    titleDocument=title
+header 
+    a(href='/') Return to home
+body
+    div(id="printFilms")
+        h1=Title
+        img(src=Poster)
+        p Year: #{Year}
+        p Genre: #{Genre}
+        p Director: #{Director}
+        p Writer/s: #{Writer}
+        p Actors: #{Actors}
+        p Plot: #{Plot}
+        p Ratings: #{Ratings[0].Value}
